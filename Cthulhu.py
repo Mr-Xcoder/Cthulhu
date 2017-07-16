@@ -45,12 +45,32 @@ functions = {
         arity = 2,
         function = lambda a,b: a // b
     ),
+    '%' : properties(
+        # Modulo
+        arity = 2,
+        function = lambda a,b: a % b
+    ),
 
     # Operators with Precedence of 3 (Irrelevant in Cthulhu, but a nice sorting criterion)
     '^' : properties(
         # Raise the first value to the power of the second value
         arity = 2,
         function = lambda a,b: a ** b
+    ),
+    '√' : properties(
+        # Generic Root
+        arity = 2,
+        function = lambda a,b: a ** (1/b)
+    ),
+    '²' : properties(
+        # Square an integer
+        arity = 1,
+        function = lambda a: a ** 2
+    ),
+    '◊' : properties(
+        # Square Root
+        arity = 1,
+        function = lambda a: a ** 0.5
     ),
 
     # Comparison Operators
