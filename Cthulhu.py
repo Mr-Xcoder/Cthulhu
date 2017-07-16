@@ -89,33 +89,68 @@ functions = {
         arity = 2,
         function = lambda a,b: a < b
     ),
-    '>': properties(
+    '>' : properties(
         # Check if the first value is higher than the second value
         arity = 2,
         function = lambda a,b: a > b
     ),
-    '≤': properties(
+    '≤' : properties(
         # Check if the first value is smaller than or equal to the second value
         arity = 2,
         function = lambda a,b: a <= b
     ),
-    '≥': properties(
+    '≥' : properties(
         # Check if the first value is greater than or equal to the second value
         arity = 2,
         function = lambda a,b: a >= b
     ),
 
-    # Standard functions
-    'ª' : properties(
+    # Boolean Operators
+    '&' : properties(
+        # Logical AND
         arity = 2,
-        function = list.append
+        function = lambda a,b: a and b
+    ),
+    '|' : properties(
+        # Logical OR
+        arity = 2,
+        function = lambda a,b: a or b
+    ),
+    '¡' : properties(
+        # Logical NOT
+        arity = 1,
+        function = lambda a: not a
+    ),
+
+    # Bitwise Operators
+    '~' : properties(
+        # The Bitwise Complement
+        arity = 1,
+        function = lambda a: ~a
+    ),
+    '«' : properties(
+        # Shifts the bits to the left
+        arity = 2,
+        function = lambda a,b: a << b
+    ),
+    '»' : properties(
+        # Shifts the bits to the right
+        arity = 2,
+        function = lambda a,b: a >> b
+    ),
+    '¢' : properties(
+        # Bitwise AND
+        arity = 2,
+        function = lambda a,b: a & b
     ),
     'º' : properties(
+        # Bitwise OR
         arity = 2,
-        function = lambda array,ommited_index:list([array[index] for index in range(len(array)) if index != ommited_index])
+        function = lambda a,b: a | b
     ),
-    '¬' : properties(
-        arity = 1,
-        function = len
+    'ˆ' : properties(
+        # Bitwise XOR
+        arity = 2,
+        function = lambda a,b: a ^ b
     )
 }
