@@ -48,12 +48,9 @@ functions = {
 
     # Operators with Precedence of 3 (Irrelevant in Cthulhu, but a nice sorting criterion)
     '^' : properties(
-
         # Raise the first value to the power of the second value
-
         arity = 2,
         function = lambda a,b: a ** b
-
     ),
 
     # Comparison Operators
