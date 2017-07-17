@@ -15,9 +15,7 @@ def athFibonacci(a):
 def first_a_fibonacci(a):
 	result = []
 	if a < 0: return []
-	if a == 0: return [0]
-	elif a==1: return [0,1]
-	elif a==2: return [0,1,1]
+	if a < 3: return [0,1,1][:a]
 	else:
 		x,y = 0,1
 		result += [x,y]
