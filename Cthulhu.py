@@ -1,3 +1,5 @@
+fib_cache = {0:0, 1:1, 2:1}
+
 class properties(dict):
 	def __init__(self, *args, **kwargs):
 		dict.__init__(self, *args, **kwargs)
@@ -5,17 +7,37 @@ class properties(dict):
 
 def is_fibonacci(a):n = (.5 + .5 * 5.0 ** .5) * a;return a == 0 or abs(round(n) - n) < 1.0 / a
 
-def athFibonacci(a):
-	if a < 1: return 0
-	elif a < 3: return 1
+def Fib(n):
+	global fib_cache
+	if n in fib_cache:
+		return fib_cache[n]
 	else:
-		x,y = 0,1
-		while a-2>=0:x,y=y,x+y;a-=1
+		result = ath_fibonacci(n)[1]
+		fib_cache[n] = result
+		return result
+
+def ath_fibonacci(n):
+	global fib_cache
+	if n==0: return 1,0
+	shift = n>>1
+	if shift in fib_cache and shift-1 in fib_cache:
+		a,b = fib_cache[shift-1],fib_cache[shift]
+	else:
+		a,b = ath_fibonacci(shift)
+		fib_cache[shift-1] = a
+		fib_cache[shift] = b
+	b2 = b*b
+	a,b = a*a+b2, (a<<1)*b+b2
+	if n%2 == 1:
+		fib_cache[n-1] = b
+		return b,a+b
+	fib_cache[n-1] = a
+	return a,b
 
 def first_a_fibonacci(a):
 	result = []
-	if a < 0: return []
-	if a < 3: return [0,1,1][:a]
+	if a<0: return []
+	elif a<3: return [0,1,1][:a]
 	else:
 		x,y = 0,1
 		result += [x,y]
@@ -182,11 +204,10 @@ functions = {
 	'ﬂ' : properties(
 		# Returns the a-th Fibonacci number (0-indexed): `0 -> 0, 1-> 1, 2 -> 1, 3 -> 2, 4 -> 3, 5 -> 5, 6 -> 8...`
 		arity = 1,
-		function = athFibonacci
+		function = ath_fibonacci
 	),
-    	'ƒ' : properties(
-		# Returns the first a Fibonacci numbers
-        	arity = 1,
-       		function = first_a_fibonacci
-    	)
+	'ƒ' : properties(
+		arity = 1,
+		function = first_a_fibonacci
+	)
 }
