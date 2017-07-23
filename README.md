@@ -3,7 +3,7 @@
 # Cthulhu
 *Cthulhu* is (will be) a recreational programming language designed for code golf and number-manipulation.
 
-### Some Things to keep in mind
+#### Some Things to keep in mind
 
 - Cthulhu will heavily rely on the *arities* (see below) of its functions, and there won't be any functions of unbounded arity (an exception to the rule is printing with `§`), because that wouldn't be beneficial for golfing. 
 
@@ -13,7 +13,7 @@
 
 - Cthulhu does *not* have implicit printing. That means you must explicitly tell the interpreter that you want to output something. You can use `«` for printing everything until the end of the whole program, or you can use the alternative `§` to print everything up until the first occurence of the character `‹`. If `‹` is missing when you have an occurence of `§`, the program will most likely throw an error, because `‹` is not implicitly added at the end.
 
-### Useful Resources
+#### Useful Resources
 
 - [Input / Output Documentation](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Input-Output-Documetation.md)
 
