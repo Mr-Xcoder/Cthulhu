@@ -3,7 +3,7 @@
 # Cthulhu
 *Cthulhu* is (will be) a recreational programming language designed for code golf and number-manipulation.
 
-##### Some Things to keep in mind
+#### Some Things to keep in mind
 
 - Cthulhu will heavily rely on the *arities* (see below) of its functions, and there won't be any functions of unbounded arity, because that wouldn't be beneficial for golfing. 
 
