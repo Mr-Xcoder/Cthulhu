@@ -16,7 +16,7 @@ Take note that outputting isn't implicit in Cthulhu, hence you must explicitly "
 
 - `«` - Outputs the result given by the piece of code from its occurrence all the way to the end of the program. 
 
-- `›` - Outputs the result given by the piece of code from its occurrence up until the first `‹` symbol. Take note that if no occurernce of `‹` is detected after a `›`, the interpreter will most likely throw an error. This is the only function in Cthulhu that has unbounded arity.
+- `›` - Outputs the result given by the piece of code from its occurrence up until the first `‹` symbol. Take note that if no occurrence of `‹` is detected after a `›`, the interpreter will most likely throw an error. This is the only function in Cthulhu that has unbounded, controlable arity.
 
 ### Types and Formats
 
