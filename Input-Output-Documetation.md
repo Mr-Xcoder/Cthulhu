@@ -10,4 +10,4 @@ Integers|`<integer>`|`100`
 Floating point Number|`<integer part>.<decimal part>`|`100.0`
 Strings|`"<string>"`|`"100"`
 Lists|`[<type>,...,<type>]`|`[100, 99, 98]`
-||`["100", "99", "98"]`
+|||`["100", "99", "98"]`
