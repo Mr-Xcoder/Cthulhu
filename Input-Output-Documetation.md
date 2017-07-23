@@ -2,7 +2,7 @@
 
 ### Taking input
   
-- You can take input of any data type using the function `»`. This allows you to take any kind of Data type, as shown in the table below (see *[Types and Formats]*).
+- You can take input of any data type using the function `»`. This allows you to take any kind of Data type, as shown in the table below (see *[Types and Formats](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Input-Output-Documetation.md#types-and-formats)*).
 
 
 
