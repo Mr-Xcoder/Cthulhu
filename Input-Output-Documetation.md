@@ -4,7 +4,7 @@
   
 The reasons for taking user input may vary, and Cthulhu offers support for each of the situations, providing 3 useful ways of taking input:
  
-- You can take input of any data type using the function `»`. This allows you to take any kind of Data type as input, as shown in the table below (see *[Types and Formats](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Input-Output-Documetation.md#types-and-formats)*).
+- You can take input using the function `»`. This allows you to take any kind of Data type as input, as shown in the table below (see *[Types and Formats](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Input-Output-Documetation.md#types-and-formats)*).
 
 - If you want to take input as a String and not worry about quote formatting, you can hapily use `‘`, which is similar to Python 2's `raw_input()` function. That automatically converts your input to a String, no matter its original data type. For instance, `123` gets converted to `"123"` and `abcd` becomes `"abcd"`.
 
