@@ -17,8 +17,8 @@
 
 - [Input / Output Documentation](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Input-Output-Documetation.md)
 
-- [Functions]()
+- [Functions](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Functions.md)
 
-- [Constants]()
+- [Constants](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Constants.md)
 
-- [Control Flow]()
+- [Control Flow](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Control-Flow.md)
