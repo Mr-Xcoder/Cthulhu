@@ -29,5 +29,4 @@ Boolean Values|`<True/False>`|`True`
 Lists of Integers|`[<integer>,...,<integer>]`|`[100, 99, 98]`
 Lists of Floats|`[<float>,...,<float>]`|`[100.0, 99.5, 98.4]`
 Lists of Strings|`["<string>",...,"<string>"]`|`["100", "99", "98"]`
-
 Lists of Booleans|`[<True/False>,...,<True/False>]`|`[False, False, True]`
