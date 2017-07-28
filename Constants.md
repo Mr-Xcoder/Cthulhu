@@ -28,3 +28,17 @@ Symbol | Name | Approximate Value
 `δ`|[Feigenbaum Constant δ](https://en.wikipedia.org/wiki/Feigenbaum_constants)|`4.6692`
 `α`|[Feigenbaum Constant α](https://en.wikipedia.org/wiki/Feigenbaum_constants)|`2.5029`
 `j`|[The Imaginary Unit – √(-1)](https://en.wikipedia.org/wiki/Imaginary_unit)|`i=√(-1)`
+
+### Strings
+
+Cthulhu wants to be good at Strings too, and we must give him some resources:
+
+Symbol|String
+------|------
+`n`|Newline (`'\n'`)
+`s`|Space (`' '`)
+`g`|Empty String (`''`)
+`Î`|Digits (`'0123456789'`)
+`å`|Lowercase Alphabet (`'abcdefghijklmnopqrstuvwxyz'`)
+`Å`|Uppercase Alaphabet (`'ABCDEFGHIJKLMNOPQRSTUVWXYZ'`)
+`Ø`|All Printable ASCII
