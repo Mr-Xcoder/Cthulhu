@@ -27,4 +27,4 @@ Symbol | Name | Approximate Value
 `e`|[Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant))|`2.7182818285`
 `δ`|[Feigenbaum Constant δ](https://en.wikipedia.org/wiki/Feigenbaum_constants)|`4.6692`
 `α`|[Feigenbaum Constant α](https://en.wikipedia.org/wiki/Feigenbaum_constants)|`2.5029`
-`j`|[The Imaginary Unit (√(-1)](https://en.wikipedia.org/wiki/Imaginary_unit)|`i=√(-1)`
+`j`|[The Imaginary Unit – √(-1)](https://en.wikipedia.org/wiki/Imaginary_unit)|`i=√(-1)`
