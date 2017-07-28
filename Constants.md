@@ -25,3 +25,5 @@ Symbol | Name | Approximate Value
 `ϕ`|[Phi](https://en.wikipedia.org/wiki/Golden_ratio)|`1.6180339887`
 `γ`|[Euler-Mascheroni Constant](https://en.wikipedia.org/wiki/Euler–Mascheroni_constant)|`0.5772156649`
 `e`|[Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant))|`2.7182818285`
+`δ`|[Feigenbaum Constant δ](https://en.wikipedia.org/wiki/Feigenbaum_constants)|`4.6692`
+`α`|[Feigenbaum Constant α](https://en.wikipedia.org/wiki/Feigenbaum_constants)|`2.5029`
