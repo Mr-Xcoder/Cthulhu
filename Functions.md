@@ -30,10 +30,12 @@ Function|Description
 `~`|[Bitwise complement](https://stackoverflow.com/questions/791328/how-does-the-bitwise-complement-operator-work). Python equivalent: `~A`
 `⪡`|Bitwise Left shift. Shifts the bits of **A** to the left by **B** places
 `⪢`|Bitwise Right Shift. Shifts the bits of **A** to the right by **B** places
+`º`|Bitwise **OR**. Python equivalent: `A \| B`
 `¢`|Bitwise **AND**. Python equivalent: `A & B`
-`º`|Bitwise **OR**. Python equivalent: `A | B`
 `ˆ`|Bitwise **XOR**. Python equivalent: `A ^ B` (Note: `ˆ` and `^` are different characters)
-
+`ﬁ`|Checks if **A** is in the Fibonacci sequence
+`ﬂ`|Returns the **A**th Fibonacci number (0-indexed)
+`ƒ`|Returns the first **A** Fibonacci numbers (0-indexed)
 
 
 
