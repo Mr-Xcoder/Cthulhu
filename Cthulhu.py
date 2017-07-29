@@ -197,7 +197,7 @@ functions = {
 
 	# Sequence Built-ins
 	'ﬁ' : properties(
-		# Checks if the given number is a Finonacci number
+		# Checks if the given number is a Fibonacci number
 		arity = 1,
 		function = is_fibonacci
 	),
