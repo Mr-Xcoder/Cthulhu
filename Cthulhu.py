@@ -169,12 +169,12 @@ functions = {
 		arity = 1,
 		function = lambda a: ~a
 	),
-	'«' : properties(
+	'⪡' : properties(
 		# Shifts the bits to the left
 		arity = 2,
 		function = lambda a,b: a << b
 	),
-	'»' : properties(
+	'⪢' : properties(
 		# Shifts the bits to the right
 		arity = 2,
 		function = lambda a,b: a >> b
