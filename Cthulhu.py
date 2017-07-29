@@ -157,7 +157,7 @@ functions = {
 		arity = 2,
 		function = lambda a,b: a or b
 	),
-	'¡' : properties(
+	'¬' : properties(
 		# Logical NOT
 		arity = 1,
 		function = lambda a: not a
