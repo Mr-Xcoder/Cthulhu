@@ -29,7 +29,7 @@ Symbol | Name | Approximate Value
 `α`|[Feigenbaum Constant α](https://en.wikipedia.org/wiki/Feigenbaum_constants)|`2.5029`
 `j`|[The Imaginary Unit – √(-1)](https://en.wikipedia.org/wiki/Imaginary_unit)|`i=√(-1)`
 
-### Strings
+### Predefined Strings
 
 Cthulhu wants to be good at Strings too, and we must give him some resources:
 
