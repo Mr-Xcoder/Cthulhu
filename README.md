@@ -15,10 +15,10 @@
 
 ## Useful Resources
 
-- [Input / Output Documentation](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Input-Output-Documetation.md)
+- [Input / Output Guide](https://github.com/Mr-Xcoder/Cthulhu/wiki/Taking-Input-and-Providing-Output)
 
-- [Functions](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Functions.md)
+- [Functions](https://github.com/Mr-Xcoder/Cthulhu/wiki/Functions)
 
-- [Constants](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Constants.md)
+- [Constants](https://github.com/Mr-Xcoder/Cthulhu/wiki/Constants)
 
-- [Control Flow](https://github.com/Mr-Xcoder/Cthulhu/blob/Readme.md-edits/Control-Flow.md)
+- [Control Flow](https://github.com/Mr-Xcoder/Cthulhu/wiki/Control-Flow)
