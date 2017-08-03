@@ -1,3 +1,4 @@
+import math, string
 fib_cache = {0:0, 1:1, 2:1}
 
 class properties(dict):
@@ -223,4 +224,31 @@ functions = {
 		arity = 2,
 		function = lambda x,y: x[y]
 	)
+}
+constants = {
+	'Z' : 0,
+	'O' : 1,
+	'D' : 0.5,
+	'E' : 10,
+	'W' : 20,
+	'Y' : 50,
+	'H' : 100,
+	'T' : 1000,
+	'M' : 1000000,
+	# Mathematical Constants
+	'π' : math.pi,
+	'ϕ' : 1.6180339887,
+	'γ' : 0.5772156649,
+	'e' : math.e,
+	'δ' : 4.6692,
+	'α' : 2.5029,
+	'j' : 1j,
+	# String Constants
+	'n' : '\n',
+	's' : ' ',
+	'g' : '',
+	'Î' : string.digits,
+	'å' : 'abcdefghijklmnopqrstuvwxyz',
+	'Å' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+	'Ø' : string.printable
 }
