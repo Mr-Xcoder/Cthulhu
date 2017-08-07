@@ -210,19 +210,6 @@ functions = {
 	'ƒ' : properties(
 		arity = 1,
 		function = first_a_fibonacci
-	),
-	# List operations
-	'…' : properties(
-		# Range
-		arity = 2,
-		function = range
-	),
-	'@' : properties(
-		# Array index.
-		# First argument is the list,
-		# Second is a zero-based index.
-		arity = 2,
-		function = lambda x,y: x[y]
 	)
 }
 constants = {
