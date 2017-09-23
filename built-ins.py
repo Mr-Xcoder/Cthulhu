@@ -71,6 +71,7 @@ def subtract(a, b):
         return [x - y for x,y in zip(a, b)]
     return a - b
 
+
 def multiply(a, b):
     if isinstance(a, list) and (isinstance(b, float) or isinstance(b, int)):
         return [x * b for x in a]
