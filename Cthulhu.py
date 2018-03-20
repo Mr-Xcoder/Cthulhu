@@ -1,3 +1,5 @@
+import sympy
+import math
 import sys
 
 pause = 0
@@ -40,9 +42,23 @@ class Command:
             stack.append(self.func(*argument_list))
 
 
+def primefac(x: int) -> list:
+    result = []
+    for factor, exponent in sympy.ntheory.factor_.factorint(int(x)).items():
+        result.extend([factor] * exponent)
+    return result
+
+
 def wrap_stack():
     global stack
     stack = [stack]
+
+
+def evaluate(x: object) -> object:
+    try:
+        return eval(x)
+    except (ValueError, SyntaxError):
+        return x
 
 
 commands = {
@@ -54,12 +70,34 @@ commands = {
     'ˆ': Command(2, (lambda x, y: x ** y), neutral_elements=[1, 1]),
     '%': Command(2, (lambda x, y: x % y), neutral_elements=[1, 1]),
     ':': Command(2, (lambda x, y: x // y), neutral_elements=[1, 1]),
+    '|': Command(2, (lambda x, y: x | y), neutral_elements=[1, 1]),
+    'X': Command(2, (lambda x, y: x ^ y), neutral_elements=[1, 1]),
+    '&': Command(2, (lambda x, y: x & y), neutral_elements=[1, 1]),
+    '>': Command(2, (lambda x, y: int(x > y)), neutral_elements=[2, 1]),
+    '<': Command(2, (lambda x, y: int(x < y)), neutral_elements=[0, 1]),
+    '≥': Command(2, (lambda x, y: int(x >= y)), neutral_elements=[1, 1]),
+    '≤': Command(2, (lambda x, y: int(x <= y)), neutral_elements=[1, 1]),
+    '=': Command(2, (lambda x, y: int(x == y)), neutral_elements=[1, 1]),
+    '≠': Command(2, (lambda x, y: int(x != y)), neutral_elements=[1, 1]),
     # Unifunctions
-    ',': Command(1, (lambda x: [stack.pop(-1 if x >= 0 else 0) for _ in range(abs(x)) if stack][::-1 if x >= 0 else 1])),
+    ',': Command(1, (lambda x: [stack.pop(-1 if x >= 0 else 0) for _ in range(abs(x))
+                                if stack][::-1 if x >= 0 else 1])),
     '_': Command(1, (lambda x: -x if isinstance(x, int) or isinstance(x, float) else x[::-1])),
+    'p': Command(1, (lambda x: sympy.primetest.isprime(int(x)) if x >= 0 else primefac(abs(x))), neutral_elements=[1]),
+    'd': Command(1, sympy.ntheory.factor_.divisors, neutral_elements=[1]),
+    'I': Command(1, (lambda x: evaluate(STDIN[x]) if len(STDIN) > x else
+                                [1024, sympy.pi, math.e, "aeiou", "bcdfghjklmnpqrstvwxyz"][x % 5])),
+    'l': Command(1, str.lower, neutral_elements=["abcdefghijklmnopqrstuvwxyz"]),
+    'u': Command(1, str.upper, neutral_elements=["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]),
+    'e': Command(1, (lambda x: 10 ** x), neutral_elements=[3]),
+    '±': Command(1, (lambda x: (x > 0) - (x < 0)), neutral_elements=[0]),
+    '!': Command(1, (lambda x: 1-x)),
+    # Invariant functions
+    'i': Command(0, (lambda x: evaluate(STDIN[0]) if STDIN else 100)),
+    'r': Command(0, (lambda x: STDIN[0] if STDIN else 2 ** 31 - 1)),
     # Stack manipulators
     's': Command(2, (lambda x, y: stack.extend([y, x])), is_void=True, neutral_elements=[0, 0]),
-    'S': Command(3, (lambda x, y, z: stack.extend([z, y, x])), is_void=True, neutral_elements=[0,0,0]),
+    'S': Command(3, (lambda x, y, z: stack.extend([z, y, x])), is_void=True, neutral_elements=[0, 0, 0]),
     'D': Command(1, (lambda x: stack.extend([x, x])), is_void=True, neutral_elements=[0]),
     'T': Command(1, (lambda x: stack.extend([x, x, x])), is_void=True, neutral_elements=[0]),
     'W': Command(0, wrap_stack, is_void=True)
@@ -83,7 +121,7 @@ def run(program):
 
         # Handling strings
 
-        if command == '"' and (program[index-1] != '\\' if index != 0 else True):
+        if command == '"' and (program[index - 1] != '\\' if index != 0 else True):
             if (program[:index].count('"') - program[:index].count('\\"')) % 2 == 0:
                 stack.append("")
 
@@ -95,7 +133,7 @@ def run(program):
         elif command in digits:
 
             # Multi-digit integers
-            if index != 0 and program[index-1] in digits:
+            if index != 0 and program[index - 1] in digits:
                 stack[-1] = stack[-1] * 10 + int(command)
             # Pushing digits
             else:
