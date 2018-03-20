@@ -40,14 +40,29 @@ class Command:
             stack.append(self.func(*argument_list))
 
 
+def wrap_stack():
+    global stack
+    stack = [stack]
+
+
 commands = {
-    "+": Command(2, (lambda x, y: x+y), neutral_elements=[0, 0]),
-    "-": Command(2, (lambda x, y: x-y), neutral_elements=[0, 0]),
-    "/": Command(2, (lambda x, y: x/y), neutral_elements=[1, 1]),
-    "*": Command(2, (lambda x, y: x*y), neutral_elements=[1, 1]),
-    "^": Command(2, (lambda x, y: x**y), neutral_elements=[1, 1]),
-    "%": Command(2, (lambda x, y: x%y), neutral_elements=[1, 1]),
-    ":": Command(2, (lambda x, y: x//y), neutral_elements=[1, 1])
+    # Bifunctions
+    '+': Command(2, (lambda x, y: x + y), neutral_elements=[0, 0]),
+    '-': Command(2, (lambda x, y: x - y), neutral_elements=[0, 0]),
+    '/': Command(2, (lambda x, y: x / y), neutral_elements=[1, 1]),
+    '*': Command(2, (lambda x, y: x * y), neutral_elements=[1, 1]),
+    'ˆ': Command(2, (lambda x, y: x ** y), neutral_elements=[1, 1]),
+    '%': Command(2, (lambda x, y: x % y), neutral_elements=[1, 1]),
+    ':': Command(2, (lambda x, y: x // y), neutral_elements=[1, 1]),
+    # Unifunctions
+    ',': Command(1, (lambda x: [stack.pop(-1 if x >= 0 else 0) for _ in range(abs(x)) if stack][::-1 if x >= 0 else 1])),
+    '_': Command(1, (lambda x: -x if isinstance(x, int) or isinstance(x, float) else x[::-1])),
+    # Stack manipulators
+    's': Command(2, (lambda x, y: stack.extend([y, x])), is_void=True, neutral_elements=[0, 0]),
+    'S': Command(3, (lambda x, y, z: stack.extend([z, y, x])), is_void=True, neutral_elements=[0,0,0]),
+    'D': Command(1, (lambda x: stack.extend([x, x])), is_void=True, neutral_elements=[0]),
+    'T': Command(1, (lambda x: stack.extend([x, x, x])), is_void=True, neutral_elements=[0]),
+    'W': Command(0, wrap_stack, is_void=True)
 }
 
 
@@ -85,10 +100,9 @@ def run(program):
             # Pushing digits
             else:
                 stack.append(int(command))
-        
+
         else:
             if command in commands.keys():
                 commands[command].call()
 
-    return stack
-
+    return stack[-1]
